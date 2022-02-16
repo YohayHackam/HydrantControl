@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create hydrent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style2.css">
+    
+</head>
+<body dir="rtl">
+    <div class="center">
+        <form action="">
+            <header class="header" id="main-header">
+                <i class=" fa-regular fa-rectangle-xmark"></i>
+                <h1>יצירת הידרנט</h1>
+                <hr>
+                <label for="local-authority">רשות מקומית</label> <br>
+                <select name="Local Authority" id="Local Authority" required">
+                    <option value="" disabled selected>בחר רשות</option>
+                    <option value="ראשון לציון">ראשון לציון</option>
+                </select>
+                <br>
+                <label for="address">כתובת ההידרנט</label> <br>
+                <input type="text" name="address" id="address" placeholder="הזן כתובת הידרנט" required> <br>
+                <label for="id">מס' הידרנט</label> <br>
+                <input type="text" name="id"  id="id" placeholder="הזן מספר הידרנט"required> <br>
+                <label for="sim-number">מספר SIM</label> <br>
+                <input type="text" id="sim-number" name="sim-number" placeholder="הזן מספר SIM" required> <br>
+                <label for="sim-number">תאריך הצבה</label> <br>
+                <input type="date" id="sim-number" name="sim-number" style="text-align: end";" required> <br>
+                <div class="logo-tagid">
+                    <div class="logo-preview">
+                        <i class="far fa-file-image"></i>
+                    </div>
+                    <div class="upload">
+                        <label for="upload">הוסף את לוגו תאגיד המים</label> <br>
+                        <input type="button" class="btn" id="upload" value="העלאת תמונה">
+                    </div>
+                </div>              
+                    <input type="submit" class="btn" value="צור הידרנט">
+
+
+            </header>    
+        </form>
+    </div>
+</body>
+</html>

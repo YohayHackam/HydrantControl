@@ -1,0 +1,99 @@
+ <!--*************************************
+     ***  Made By Yohay Hackam         ***
+     ***  mail: Yoman_321@hotmail.com  ***
+     ***  054-2616626                  ***
+     *************************************-->
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abnormal Flow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/stylePopup.css">
+    <link rel="stylesheet" href="./css/style2.css">
+    
+    
+</head>
+<body dir="rtl">
+    <div class="center">
+        <form >
+            <header class="header" id="main-header">
+                <i class=" fa-regular fa-rectangle-xmark"></i>
+                <h1>זרימה חריגה</h1>
+                <br>
+                <div class="tabList">
+                    <button class="tabBtn tabSelected" id="eventDetailsBtn">פרטי אירוע</button>
+                    <button class="tabBtn" id="eventHandlingBtn">טיפול באירוע</button>
+                </div>
+            </header>
+    <!----------------- details Tab ------------------------->
+                <div class="details">
+                    <div >
+                        <div class="detailDate">
+                            <p>תאריך</p>
+                            <span id="date">28/1/2022</span>
+                        </div>
+                        <div class="detailHandler">
+                            <p>מטפל:</p>
+                            <span id="date">שרון</span>
+                        </div>
+                    </div>
+                    <div >
+                        <label for="corporationId">קוד תאגיד</label> <br>
+                        <input type="text" name="corporationId" id="corporationId" placeholder="הזן קוד תאגיד" required> 
+                    </div>
+                    <div >
+                        <label for="status">סטטוס תאגיד</label> <br>
+                        <select name="status" id="status" required">
+                            <option value="" disabled selected>בחר סטטוס</option>
+                            <option value="active">פעיל</option>
+                        </select>
+                    </div>
+                    <div >
+                        <label for="perent"> תאגיד אב</label> <br>
+                        <select name="perent" id="perent" ">
+                            <option value="" disabled selected>-</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                
+                </div>
+                <h3>פרטי התקשרות</h3>
+                    <div class="contects">
+                        <div>
+                            <label for="address">כתובת תאגיד</label> <br>
+                            <input type="text" name="address" id="address" placeholder="הזן כתובת תאגיד" required> <br>
+                        </div>
+                        <div>
+                            <label for="contact">איש קשר</label> <br>
+                            <input type="text" name="contact"  id="contact" placeholder="הזן פרטי איש קשר"required> <br>
+                        </div>
+                        <div>
+                            <label for="phone">טלפון</label> <br>
+                            <input type="text" id="phone" name="phone" placeholder="הזן מספר טלפון" required> <br>
+                        </div>
+                        <div>
+                            <label for="email">דוא"ל</label> <br>
+                            <input type="text" id="email" name="email" placeholder="הזן כתובת אימייל" required> <br>
+                        </div>
+                    </div>
+                <div class="logo-tagid">
+                    <div class="logo-preview">
+                        <i class="far fa-file-image"></i>
+                    </div>
+                    <div class="upload">
+                        <label for="upload">הוסף את לוגו תאגיד המים</label> <br>
+                        <input type="button" class="btn" id="upload" value="העלאת תמונה">
+                    </div>
+                </div>              
+                    <input type="submit" class="btn" value="צור לקוח">
+
+
+            </header>    
+        </form>
+    </div>
+</body>
+</html>

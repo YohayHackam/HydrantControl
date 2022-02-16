@@ -1,0 +1,132 @@
+/*************************************
+ ***  Made By Yohay Hackam         ***
+ ***  mail: Yoman_321@hotmail.com  ***
+ ***  054-2616626                  ***
+ *************************************/
+:root {
+    /* pseudo-class, we'll discuss later */
+    /* variable declaration */
+    --btn-back-color: rgb(68, 95, 131);
+    --btn-back-hover: rgba(101, 144, 200,0.1);
+    --box-background-color: #e3f2f5;
+    --box-inset-shedow:rgb(29, 53, 121);
+    --body-backround-backup-color:rgb(61, 82, 94);
+    --hover-backgrond-color: rgb(240, 254, 255);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  }
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  body{
+  height: 100vh;
+  background-color: var(--body-backround-backup-color);
+  background-image: url(../img/background.jpg);
+  background-size: 100vw 100vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  }
+  .center{
+    box-shadow: 3px 3px 15px inset rgb(29, 53, 121);
+    background-color: var(--box-background-color);
+    width: 400px;
+    border-radius: 150px;        
+    border-top-right-radius: 10px;
+    border-style: none;  
+    padding: 2rem;
+  }
+
+  form{
+    border: 1px solid var(--btn-back-color);
+    border-radius: 100px;
+    border-top-right-radius: 3px;
+    padding: 10px;
+  }
+
+  hr{
+    margin: 10px 0px; 
+    width: 90%;
+  }
+
+  input[type=text],input[type=date], select {
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 10px;
+    margin-bottom: 7px;
+    width: 100%;
+    /* round corners */
+    border-color: var(--btn-back-color);
+    border-radius: 5px;   
+    border-width: 1px; 
+  }
+  .field:hover{
+      border:black solid 2.5px;
+  }
+  label{      
+      font-family: Verdana, sans-serif;
+  }
+  .fa-regular.fa-rectangle-xmark{
+    margin-top: 15px;
+    margin-left: 40px;
+    background-color: var(--btn-back-hover);
+    font-size: 1.2rem;
+    color:gray;
+    
+    
+    float: left;
+  }
+  .logo-tagid{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .logo-preview{
+    cursor: pointer;
+    margin: 10px 0 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--btn-back-color);
+    border-radius: 3px;
+    width: 70px;
+    height: 70px;
+    color: gray;
+    background-color: var(--btn-back-hover);
+  }
+  .far.fa-file-image{
+    font-size: 2rem;
+  }
+
+  input[type="submit"]{
+    display: block;
+    margin: 10px auto;
+    width: 60%;
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    cursor: pointer;
+    /* using the variable */
+    background-color: var(--btn-back-color);
+    color: white;
+    margin: 5px 0px;
+    padding: 2px;
+    border-radius: 5px; 
+  }  
+
+  .fa-regular.fa-rectangle-xmark:hover,.logo-preview:hover, .btn:hover, input:hover,select:hover{
+    font-weight: bolder;
+    color: black;
+    background-color: var(--btn-back-hover);
+  }
+
+  a{
+    text-decoration: none;
+}
+  a:hover{
+    text-decoration-line: underline;
+  }

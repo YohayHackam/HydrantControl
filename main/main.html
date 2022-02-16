@@ -1,0 +1,161 @@
+<!--
+    /*************************************
+    ***  Made By Yohay Hackam         ***
+ ***  mail: Yoman_321@hotmail.com  ***
+ ***  054-2616626                  ***
+ *************************************/ -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style-main.css">  
+    <script src="./js/map.js"></script>  <!-- Google Map Api managment -->
+    <title>ניהול אירועים</title>
+</head>
+<body dir="rtl">
+
+    <!--------------  header -------------------------->
+    <!-- TBD make menu + user login -->
+    <nav>
+            <img src="./img/logo1.png" >
+            <span><i class="fas fa-bars"></i></span>
+            <span><P>תאגיד המים</P></span>
+            <code  class="version"> גרסה 1.1</code> 
+    </nav>
+    <!------------  main window as  class center ---------------------->
+        <div class="center">
+            <!------------ Events/Alerts area id event box----------------->
+            <div class="boxShadow" id="rightBox">
+                <!-----------  Tab Control: Event/Alerts ----------------->
+                <div class="tabSelect">   
+                    <input type="radio" name="TabSelect" id="allEvents" checked>
+                    <label for="allEvents" >אירועים </label>
+                    <hr>                                    
+                    <input type="radio" name="TabSelect" id="allAlerts" >
+                    <label for="allAlerts" >התראות   </label>                                
+                </div>
+                <hr>
+                <!------------  TAB for all Alerts  ------------------->
+                <div id="alertsTab" class="hide">  
+                    TBD display alert list here 
+                </div>
+                <!---------------------  TAB for all Events types --------------------->
+                <div id="eventsTab">      
+                    <label for="noEvent">
+                        <input type="radio" name="eventType" id="noEvent">                                                                      
+                    </label>
+                    <!---------------  Revers-Flows Events Group class eventGroup ----------->
+                    <label for="revers">
+                            <!-- Invisible radio buttons to cascade events -->
+                            <input type="radio" name="eventType" id="revers" >
+                            <div class="eventGroup hide" id="reversFlows">
+                                <div class="eventGroupHeader">
+                                    <p> זרימה הפוכה </p>
+                                    <p class="eventGroupCounter" id="reversCounter">0</p>
+                                </div>
+                                <div class="eventGroupList hide"  id="trig2">
+                                <hr>
+                                <!-------------- Events injected here via JS -==------------->
+                                </div>
+                            </div>
+                        </label>
+                        <!---------------  Flows Events Group class eventGroup ----------->
+                        <label for="abnormal">
+                            <!-- Invisible radio buttons to cascade events -->
+                            <input type="radio" name="eventType" id="abnormal">
+                            <div class="eventGroup hide" id="abnormalFlows">
+                                <div class="eventGroupHeader">
+                                    <p>זרימת מים </p>
+                                    <p class="eventGroupCounter" id="abnormalCounter">0</p>
+                                </div>
+                                <div class="eventGroupList hide" id="trig1">
+                                <hr>
+                                <!-------------- Events injected here via JS -==------------->          
+                                </div>
+                            </div>
+                        </label>
+                        <!---------------  Vandalisem Events Group class eventGroup ----------->
+                        <label for="vandalist">                            
+                            <!-- Invisible radio buttons to cascade events -->
+                            <input type="radio" name="eventType" id="vandalist">
+                            <div class="eventGroup hide" id="vandalisem">
+                                <div class="eventGroupHeader">
+                                    <p>ונדליזם \ פתיחת חיפוי</p>
+                                    <p class="eventGroupCounter" id="vandalisemCounter">0</p>
+                                </div>
+                        
+                                <div class="eventGroupList hide" id="trig3">                            
+                                    <hr>
+                                    <!-------------- Events injected here via JS -==------------->                                
+                                </div>
+                            </div>
+                        </label>
+                        <!---------------  Low Presure Events Group class eventGroup ----------->
+                        <label for="presure">
+                            <!-- Invisible radio buttons to cascade events -->
+                            <input type="radio" name="eventType" id="presure">
+                            <div class="eventGroup hide" id="pipePresure">
+                                <div class="eventGroupHeader">
+                                    <p> לחץ מים חריג</p>
+                                    <p class="eventGroupCounter" id="pipePresureCounter">0</p>
+                                </div>
+                                <div class="eventGroupList hide" id="trig7">
+                                    <hr>
+                                    <!-------------- Events injected here via JS -==------------->                    
+                                </div>
+                            </div>
+                        </label>
+                        <!---------------  Lake of Life Signal Events Group class eventGroup ----------->
+                        <label for="signal">
+                            <!-- Invisible radio buttons to cascade events -->
+                            <input type="radio" name="eventType" id="signal">
+                            <div class="eventGroup hide" id="noSignal">
+                                <div class="eventGroupHeader">
+                                    <p> היעדר אות חיים</p>
+                                    <p class="eventGroupCounter" id="noSignalCounter">0</p>
+                                </div>
+                                <div class="eventGroupList hide" id="trig6">    
+                                    <hr>                                              
+                                    <!-------------- Events injected here via JS -==------------->       
+                                </div>                 
+                            </div>
+                        </label>            
+                        
+                        <!---------------  Low Battery Events Group class eventGroup ----------->
+                        <label for="battary">
+                            <!-- Invisible radio buttons to cascade events -->
+                            <input type="radio" name="eventType" id="battary">
+                            <div class="eventGroup hide" id="noBattary">
+                                <div class="eventGroupHeader">
+                                    <p>סוללה חלשה</p>
+                                    <p class="eventGroupCounter" id="noBattaryCounter">0</p>
+                                </div>
+                                <div class="eventGroupList hide" id="trig5">
+                                    <hr>
+                                    <!-------------- Events injected here via JS -==------------->                
+                                </div>
+                            </div>
+                        </label>
+                </div>
+            </div>
+
+            <!--------------- Search box ---------------------->
+            <div class="searchBox">
+                <label for="search">חיפוש:</label>
+                <input type="text" id="search" placeholder="חפש הידרנט">
+            </div>
+            <!-- -------------Google Map API container --------------------------------------->
+            <div class="boxShadow" id="mapContainer"> 
+                
+            </div>
+        </div>
+   
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script src="./js/main.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbkzzKDzZxohQZsoI10DwHW9WFNgKMugM&callback=displayMap&language=iw">
+  </script>
+</body>
+</html>

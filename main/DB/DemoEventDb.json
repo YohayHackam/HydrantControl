@@ -1,0 +1,88 @@
+
+
+[
+
+{
+"eventType":1,
+"address":"כתובת 1",
+"dateTime":"27/1/2020 8:00",
+"id":1102
+},
+{
+"eventType":1,
+"address":"כתובת 2",
+"dateTime":"28/1/2020 8:00",
+"id":1103
+},
+{
+"eventType":5,
+"address":"כתובת 3",
+"dateTime":"29/1/2020 8:00",
+"id":1104
+},
+{
+"eventType":6,
+"address":"כתובת 4",
+"dateTime":"30/1/2020 8:00",
+"id":1105
+},
+{
+"eventType":7,
+"address":"כתובת 5",
+"dateTime":"3/2/2020 8:00",
+"id":1106
+},
+{
+"eventType":3,
+"address":"כתובת 6",
+"dateTime":"4/2/2020 8:00",
+"id":1107
+},
+{
+"eventType":1,
+"address":"כתובת 7",
+"dateTime":"5/2/2020 8:00",
+"id":1108
+},
+{
+"eventType":2,
+"address":"כתובת 8",
+"dateTime":"6/2/2020 8:00",
+"id":1109
+},
+{
+    "eventType":5,
+    "address":"כתובת 1",
+    "dateTime":"6/2/2020 8:00",
+    "id":1110
+}
+,
+{
+    "eventType":2,
+    "address":"כתובת 2",
+    "dateTime":"6/2/2020 8:00",
+    "id":1111
+}
+,
+{
+    "eventType":4,
+    "address":"כתובת 3",
+    "dateTime":"6/2/2020 8:00",
+    "id":1112
+}
+,
+{
+    "eventType":7,
+    "address":"כתובת 3",
+    "dateTime":"6/2/2020 8:00",
+    "id":1113
+}
+,
+{
+    "eventType":7,
+    "address":"כתובת 3",
+    "dateTime":"6/2/2020 8:00",
+    "id":1113
+}
+
+]

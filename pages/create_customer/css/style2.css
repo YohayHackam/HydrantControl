@@ -1,0 +1,32 @@
+  /*************************************
+ ***  Made By Yohay Hackam         ***
+ ***  mail: Yoman_321@hotmail.com  ***
+ ***  054-2616626                  ***
+ *************************************/
+  .center{
+    border-radius: 150px;        
+    border-top-right-radius: 10px;
+  }
+
+  form{
+    border-radius: 100px;
+    border-top-right-radius: 3px;
+  }
+  hr{
+    width: 90%;
+  }
+
+  .fa-regular.fa-rectangle-xmark{
+    margin-top: 15px;
+    margin-left: 40px;
+   
+  }
+ 
+  .far.fa-file-image{
+    font-size: 2rem;
+  }
+
+  input[type="submit"]{
+    width: 40%;
+  }
+

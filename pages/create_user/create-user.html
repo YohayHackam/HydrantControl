@@ -1,0 +1,58 @@
+ <!--*************************************
+     ***  Made By Yohay Hackam         ***
+     ***  mail: Yoman_321@hotmail.com  ***
+     ***  054-2616626                  ***
+     *************************************-->
+     
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body dir="rtl">
+    <div class="center">
+        <form action="">
+            <header class="header" id="main-header">
+                <i class=" fa-regular fa-rectangle-xmark"></i>
+                <h1>יצירת משתמש</h1>
+                <hr>
+                <label for="userName">שם משתמש</label> <br>
+                <input type="text" name="userName" id="userName" placeholder="הזן שם משתמש חדש" required> <br>
+                <label for="email">אימייל</label> <br>
+                <input type="text" name="email" id="email" placeholder="הזן כתובת אימייל" required> <br>
+                <label for="phone">מס' טלפון</label> <br>
+                <input type="text" name="phone"  id="phone" placeholder="הזן מספר טלפון"required> <br>
+                <label for="jobTitle">תפקיד</label> <br>
+                <input type="text" id="jobTitle" name="jobTitle" placeholder="ציין תפקיד" required> <br>
+                <label for="profile">פרופיל</label> <br>
+                <select name="profile" id="profile" required">
+                    <option value="" disabled selected>בחר פרופיל</option>
+                    <option value="admin">מנהל מערכת </option>
+                </select>
+
+                <label for="corporation">תאגיד </label> <br>
+                <select name="corporation" id="corporation" required">
+                    <option value="" disabled selected>בחר תאגיד מים</option>
+                    <option value="avivim">מי אביבים</option>
+                </select>
+                
+                <label for="LocalAuthority">רשות מקומית</label> <br>
+                <select name="LocalAuthority" id="LocalAuthority" required">
+                    <option value="" disabled selected>בחר רשות מקומית</option>
+                    <option value="Tel-Aviv">תל-אביב יפו</option>
+                </select>
+
+                    <input type="submit" class="btn" value="צור משתמש">
+
+
+            </header>    
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+/*************************************
+ ***  Made By Yohay Hackam         ***
+ ***  mail: Yoman_321@hotmail.com  ***
+ ***  054-2616626                  ***
+ *************************************/
+ :root {
+  /* variable declaration */
+  --nav-back-color:rgb(65, 80, 128);
+  --btn-back-color: rgb(68, 95, 131);
+  --btn-back-hover: rgba(101, 144, 200,0.1);
+  --box-background-color: #e3f2f5;
+  --box-inset-shadow:rgb(29, 53, 121);
+  --table-shadow:rgb(163, 176, 212);
+  --body-backround-backup-color:rgb(255, 255, 255);
+  --hover-backgrond-color: rgb(240, 254, 255);
+  /* font-family:Impact, Haettenschweiler, 'Arial Narrow', sans-serif; */
+}
+* {
+  /* Remove all default values */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  /* use all screen all the time */
+height: 100vh;  
+background-color: var(--body-backround-backup-color);
+background-image: url(../img/background.jpg);
+background-size: 100vw 100vh;
+
+}
+
+.center{
+  margin: 50px auto;
+  width: 75%;
+  box-shadow: 3px 3px 15px inset var(--box-inset-shadow);
+  background-color: var(--box-background-color);
+  border-radius: 150px;        
+  border-top-right-radius: 10px;
+  border-style: none;  
+  padding: 2rem;
+  padding-bottom: 4rem;
+}
+
+nav{
+  display: flex;
+  background-color: var(--nav-back-color);
+  font-size: 2rem;
+  line-height: 1.5em;
+}
+
+nav i ,nav p{
+  margin: 5px 10px;
+}
+nav i {
+  padding-top: 10px;
+}
+
+nav img{
+  margin: 10px;
+  height: 40px;
+}
+
+
+.btn {
+  cursor: pointer;
+  background-color: var(--btn-back-color);
+  color: white;
+  margin: 5px 0px;
+  padding: 2px;
+  border-radius: 5px; 
+}  
+
+/* .table{
+  width: 75%;
+  box-shadow: 15px 15px 15px var(--table-shadow);
+  border-radius: 50px;
+
+}
+
+
+table{
+  width: 100%;
+  display:table;
+  background-color: white;
+  border-collapse: collapse;
+  // border: 1px gray solid; 
+  border-radius: 15px;
+}
+.tableMainHader{
+  text-align: start;
+  padding: 20px;
+  background-color: lightgray;
+  border-color: lightgray;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+table th{
+  text-align: start;
+  padding: 15px;
+  border-bottom: 1px solid gray;
+  
+}
+table tbody td{
+  padding: 15px 10px;
+  border-bottom: 1px solid lightgray;
+}
+table tfoot .left{
+  padding: 15px 10px;
+  text-align: end;
+} */
+
+input[type="number"]{
+ border: 0px;
+ border-bottom: 1px solid gray;
+ width: 50px;
+}
+
+.Amount{
+  padding-right: 10px;
+}
+
