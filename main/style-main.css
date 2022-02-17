@@ -6,7 +6,7 @@
  /******************* variable declaration *************************************/
  :root {
    --visibleGroupCount:1;
-  --nav-back-color: rgb(29 44 77);
+  --nav-back-color: rgb(23, 38, 104);
   --nav-back-color-seconed: rgb(53 57 75);
   --activeBox-back-color: rgb(53 60 91);
   --eventBtnHover: rgba(101, 144, 200,0.9);
