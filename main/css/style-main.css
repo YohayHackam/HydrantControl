@@ -6,6 +6,8 @@
  /******************* variable declaration *************************************/
  :root {
    --visibleGroupCount:1;
+  --nav-back-color: rgb(23, 38, 104);
+  --nav-back-color-seconed: rgb(53 57 75);
   --activeBox-back-color: rgb(53 60 91);
   --eventBtnHover: rgba(101, 144, 200,0.9);
   --hrInBox: rgba(101, 144, 200,0.1);
@@ -47,7 +49,7 @@ a{text-decoration: none;}
 nav{
   display: flex;
   align-items: center;
-  background-color: var(--activeBox-back-color);
+  background-image: linear-gradient(to bottom ,var(--nav-back-color) ,var(--box-background-color));
   color: lightgray;
   font-size: 1.6rem;  
 }
@@ -79,10 +81,9 @@ nav>span:hover{
   justify-content: space-between;
   box-shadow: 3px 3px 15px inset var(--box-inset-shadow);
   background-color: var(--box-background-color);       
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  
   border-style: none;  
-  padding:16px 32px;
+  /* padding:16px 32px; */
 }
 /* Windows outer shaddow */
 .boxShadow{
@@ -93,9 +94,8 @@ nav>span:hover{
 /********************** Alerts/Events window ****************************/
 #rightBox{
   margin:0px;
-  margin-left: 8px;
-  min-width: 240px;
-  width:20%;
+  min-width: 300px;
+  width:25%;
   background:var(--activeBox-back-color);
   z-index:1;
 }
@@ -142,9 +142,9 @@ nav>span:hover{
 .eventGroup{
   position: relative;
   overflow:hidden;
-  max-height: 2.5rem ;
+  max-height: 3.5rem ;
   color: lightgray;
-  margin: 8px;
+  margin: 8px 16px;
   box-shadow: 0px 0px 0px var(--box-background-color);
   border-radius: 5px;
   background-image: linear-gradient(to bottom left ,var(--eventGruop-background) ,var(--eventGruop-background-seconed));
@@ -169,8 +169,10 @@ input[type="radio"]:checked +.eventGroup{
 .eventGroupHeader{
   display: flex;
   white-space: nowrap;
-  font-size: 1.1em;
+  font-size: 1.2em;
+  line-height:2rem;
   padding:8px;
+  padding-right: 30px;
   /* line-height:32px; */
   /* margin-bottom: 8px; */
   justify-content: space-between ;
@@ -189,15 +191,17 @@ input[type="radio"]:checked +.eventGroup > .eventGroupHeader{
 
   /* Grouped Event Counter*/
   .eventGroupCounter{
+  display: flex;
+  align-items: center;
+  justify-content:center;
   background-color: var(--counter-background);  
   color: black;
   text-align: center;
   margin: 0 5px;
   border-radius: 50%;
-  padding: 1px;
-  height: 15px;
-  width: 15px;
-  font-size: 0.6rem;
+  height: 20px;
+  width: 20px;
+  font-size: 0.7rem;
   }
   input[type="radio"]:checked +.eventGroup .eventGroupCounter{
     background-color: orange;
@@ -221,6 +225,7 @@ input[type="radio"]:checked +.eventGroup > .eventGroupList{
 /*********** Map Window ************/
 #mapContainer{
 width: 100%;
+margin: 0 16px;
 }
 
 /******* Event **********/
@@ -303,6 +308,8 @@ padding-left: 3px ;
 .eventGroupHeader , .eventGroup{
  /* min-width: 120px; */
  font-size: 0.8rem;
+ line-height:1rem;
+ padding: 2px;
  font-weight: lighter;
  margin: 0 4px 4px;
 
