@@ -54,7 +54,7 @@ function hydrentBuilder(hydrent){   //Put Hydrent Marker on Map
   }
   
 function updateMarkers(zoomLevel){  // set Markers size by zoom level , hide markers on Zoom level above 13
-  if(zoomLevel>13) 
+  if(zoomLevel>12) 
     hydrentsMarkers.forEach(marker=>{ //update all Markers Visibilty & Size
       marker.visible=true;
       let size=(zoomLevel-10)*12-20

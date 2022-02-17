@@ -60,7 +60,6 @@ function eventBuilder(event){//Creates Event Element on HTML With ID HyderntID
                 root.style.setProperty('--visibleGroupCount', Number(root.style.getPropertyValue('--visibleGroupCount'))+1);
                 eventGroupBox[idx].classList.remove("hide"); //Mak Group Event Visible
             }
-            // console.log(eventIcon["trig"+event.eventType])
             element.innerHTML+=
             `<div class="event" id="HydrentId#${event.id}"> 
                 <img src="${eventIcon["trig"+event.eventType]}" class="eventIcon" id="HydrentId#${event.id}"> 
@@ -100,20 +99,43 @@ function setActiveTab(tabId){
 eventsTab.addEventListener("click",event => focusHydrent(event));  
 
 function focusHydrent(event){ /** Focus Map on Hydrent assisated with event & change it's animation */
-    reg=new RegExp("HydrentId","");
+reg=new RegExp("HydrentId","");
+let target=event.target.id.replace("HydrentId#","");
     if(reg.test(event.target.id)){
-        map.getStreetView().setVisible(false);
-        hydrentsMarkers.forEach(marker=>{
-            marker.setAnimation(google.maps.Animation.NONE)
-            marker.visible=true;
-        })
-        if (map.getZoom()>16) 
-            map.setZoom(16)
-        let target=event.target.id.replace("HydrentId#","");
-       map.panTo(GetCord(target));
-       setTimeout(() => { map.setZoom(17)}, 650); 
+        map.getStreetView().setVisible(false); //make sure we are not in street view
+        let cord=GetCord(target); //get cordenet of target hydrent
+         hydrentsMarkers.forEach(marker=>{   
+             marker.setAnimation(google.maps.Animation.NONE) //disable all animation 
+             marker.visible=true; //make sure hydrent visible
+         })
+        if(!map.getBounds().contains(cord) && map.getZoom()> map.minZoom) { //if hydent not visible in bounds
+             smoothZoomToCord(map,cord,map.getZoom()-1); //varible(map obj,target cordenets,starting zoom level)
+        }
+        else{
+       map.panTo(cord); //pan to target hydrent
+       setTimeout(() => { map.setZoom(17)}, 400);  //zoom in on hydrent
+        }
     }        
 }
+
+// the smooth zoom function
+function smoothZoomToCord (map, cord,startZoom) {//varible(map obj,target cordenets,starting zoom level)
+    if (map.getBounds().contains(cord)) { //after finish zooming out targat is in bounds
+//        updateMarkers(map.getZoom()); //repaint markers at current zoom level
+        map.panTo(cord); //pan to target hydrent
+        setTimeout(() => { map.setZoom(17)}, 800); //zoom in on hydrent
+        return;
+    }
+    else {
+        z = google.maps.event.addListener(map, 'zoom_changed', event=>{ //recursive call back to timeout zoom
+            google.maps.event.removeListener(z);
+            smoothZoomToCord(map,cord,startZoom - 1);//varible(map obj,target cordenets,starting zoom level)
+        });
+        setTimeout(function(){map.setZoom(startZoom)}, 150); // 80ms is what I found to work well on my system -- it might not work well on all systems
+    }
+}  
+
+
 function GetCord(id){  /** returns Marker Len&Lat by  Marker ID  */
     let res;
  hydrentsMarkers.forEach(marker=>{
