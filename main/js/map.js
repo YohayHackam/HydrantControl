@@ -8,6 +8,7 @@
 const hydrentsIcons={trig1:"./img/orange_pin.png",trig2:"./img/red_pin.png",trig3:"./img/orange_pin.png",trig4:"./img/orange_pin.png",trig5:"./img/orange_pin.png",trig6:"./img/orange_pin.png",trig7:"./img/orange_pin.png",trig0:"./img/cyan_pin.png"}
 
 const hydrentsMarkers=[]; //Hydrents data holder Will be filled from jason file
+var map; //Google Map pointer`
 
 
 function displayMap()   // CallBack function from GoogleMap Api

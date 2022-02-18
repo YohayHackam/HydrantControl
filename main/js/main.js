@@ -17,7 +17,6 @@
 // Trig 7 - Pressure state
 ///****** */ What about triger 4 ?!?
 
-var map; //Google Map pointer`
 
 // Event icon location by trigger type:
 const eventIcon={trig1:"./img/flow.gif",trig2:"./img/danger.png",trig3:"./img/vandalisem.png",trig5:"./img/battery.png",trig6:"./img/power.png",trig7:"./img/pressure.png" };
@@ -96,28 +95,31 @@ function setActiveTab(tabId){
 
 /******************* Event Select ***********************/
 
-eventsTab.addEventListener("click",event => focusHydrent(event));  
+eventsTab.addEventListener("click",event => focuseEvent(event));  
 
-function focusHydrent(event){ /** Focus Map on Hydrent assisated with event & change it's animation */
-reg=new RegExp("HydrentId","");
-let target=event.target.id.replace("HydrentId#","");
-    if(reg.test(event.target.id)){
-        map.getStreetView().setVisible(false); //make sure we are not in street view
-        let cord=GetCord(target); //get cordenet of target hydrent
-         hydrentsMarkers.forEach(marker=>{   
-             marker.setAnimation(google.maps.Animation.NONE) //disable all animation 
-             marker.visible=true; //make sure hydrent visible
-         })
-             smoothZoomToCord(map,cord,map.getZoom()); //varible(map obj,target cordenets,starting zoom level)
-       
-      
-    }        
-}
+function focuseEvent(event){
+    let target=event.target.id.replace("HydrentId#","");    
+    map.getStreetView().setVisible(false); //make sure we are not in street view
+    reg=new RegExp("HydrentId","");
+    if(reg.test(event.target.id))
+    {
+        console.log('found hydrent');
+        hydrentsMarkers.forEach(marker=>{   
+            marker.setAnimation(google.maps.Animation.NONE) //disable all animation 
+            marker.visible=true; //make sure hydrent visible
+        })
+        let hydrentCord =GetCord(target);
+        smoothZoomToCord(map,hydrentCord,map.getZoom()); //varible(map obj,target cordenets,starting zoom level)                         
+        hydrentBounceAnimation(target); /** set Marker animation Bounce with 3sec timeout by marker ID  */
+    }
+    else
+        console.log('not found hydrent')
+};
+
 
 // the smooth zoom function
 function smoothZoomToCord (map, cord,startZoom) {//varible(map obj,target cordenets,starting zoom level)
     if (map.getBounds().contains(cord)) { //after finish zooming out targat is in bounds
-//        updateMarkers(map.getZoom()); //repaint markers at current zoom level
         map.panTo(cord); //pan to target hydrent
         setTimeout(() => { map.setZoom(17)}, 800); //zoom in on hydrent
         return;
@@ -137,13 +139,21 @@ function GetCord(id){  /** returns Marker Len&Lat by  Marker ID  */
  hydrentsMarkers.forEach(marker=>{
      if(Number(marker.title.replace('Id:',"")) === Number(id)){
         res=marker.position;
-        marker.setAnimation(google.maps.Animation.BOUNCE);
-        setTimeout(()=>marker.setAnimation(google.maps.Animation.NONE),4000)
      }
     });
 return res;
 }
 
+
+function hydrentBounceAnimation(id){ /** set Marker animation Bounce with 3sec timeout by marker ID  */
+    hydrentsMarkers.forEach(marker=>{
+        if(Number(marker.title.replace('Id:',"")) === Number(id)){
+            console.log(`bounce id: ${id}`)
+           marker.setAnimation(google.maps.Animation.BOUNCE);
+           setTimeout(()=>marker.setAnimation(google.maps.Animation.NONE),3000)
+        }
+       });
+}
 
 
 
