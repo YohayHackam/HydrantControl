@@ -108,13 +108,9 @@ let target=event.target.id.replace("HydrentId#","");
              marker.setAnimation(google.maps.Animation.NONE) //disable all animation 
              marker.visible=true; //make sure hydrent visible
          })
-        if(!map.getBounds().contains(cord) && map.getZoom()> map.minZoom) { //if hydent not visible in bounds
-             smoothZoomToCord(map,cord,map.getZoom()-1); //varible(map obj,target cordenets,starting zoom level)
-        }
-        else{
-       map.panTo(cord); //pan to target hydrent
-       setTimeout(() => { map.setZoom(17)}, 400);  //zoom in on hydrent
-        }
+             smoothZoomToCord(map,cord,map.getZoom()); //varible(map obj,target cordenets,starting zoom level)
+       
+      
     }        
 }
 

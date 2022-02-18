@@ -29,7 +29,7 @@ function displayMap()   // CallBack function from GoogleMap Api
      map = new google.maps.Map(mapDiv, mapOptions);
      showHydrentsFromJson();   /*** gets Hydrents data  from jason file and put Markers on Map */
      map.addListener("zoom_changed", () => updateMarkers(map.getZoom()));  //update Markers on changed zoom level
-    }
+     }
         
 function showHydrentsFromJson(){  /*** gets Hydrents data  from jason file and put Markers on Map */
   fetch("./DB/Hydrent.json")
@@ -42,7 +42,7 @@ function showHydrentsFromJson(){  /*** gets Hydrents data  from jason file and p
 function hydrentBuilder(hydrent){   //Put Hydrent Marker on Map
   let icon='trig'+getEvent(hydrent.id); //gets Hydrent Event Icon
   let marker= new google.maps.Marker({
-      position: {lat: hydrent.lat,lng:  hydrent.lng},        
+      position: {lat: hydrent.lat,lng:  hydrent.lng },        
       map:map,
       animation: google.maps.Animation.DROP,
         icon:{ url:hydrentsIcons[icon]
@@ -54,15 +54,17 @@ function hydrentBuilder(hydrent){   //Put Hydrent Marker on Map
   }
   
 function updateMarkers(zoomLevel){  // set Markers size by zoom level , hide markers on Zoom level above 13
-  if(zoomLevel>12) 
-    hydrentsMarkers.forEach(marker=>{ //update all Markers Visibilty & Size
-      marker.visible=true;
-      let size=(zoomLevel-10)*12-20
-      marker.icon.scaledSize.height=size;
-      marker.icon.scaledSize.width=size;
-      });
-  else
-    hydrentsMarkers.forEach(marker=>{marker.visible=false;});  //hide all markers on zoom level too far
+    if(zoomLevel>12) 
+      hydrentsMarkers.forEach(marker=>{ //update all Markers Visibilty & Size
+        marker.visible=true;
+        let size=(zoomLevel-10)*12-20
+        marker.icon.scaledSize.height=size;
+        marker.icon.scaledSize.width=size;
+        });
+    else
+      hydrentsMarkers.forEach(marker=>{marker.visible=false;});  //hide all markers on zoom level too far
+ 
+
 }
 
 function getEvent(id){  /*** return event trigger type by hydrent Id */
